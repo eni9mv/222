@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Eni9mv</title>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <!-- ICON -->
+      <link rel="icon" href="eni9mv.png">
+</head>
+<body>
+
+
+      <div class="wrapper">
+            <header>
+
+                  <nav>
+
+                        <div class="menu-icon">
+                              <i class="fa fa-bars fa-2x"></i>
+                        </div>
+
+                        <div class="logo">
+                              <img src="logo.png" alt="logo">
+                        </div>
+
+                        <div class="menu">
+                              <ul>
+                                    <li><a href="index.html">H O M E</a></li>
+                                    <li><a href="Services.html">S E R V I C E S</a>
+                                    <li><a href="Play.html">P L A Y</a></li>
+									
+					     <center>Enjoy With Snake Game ^^ Use This <img src="keys.png"width="60" height="35" /></center>
+									
+									
+					     <center>		    <!-- Snake -->
+		
+		<canvas id="gc" width="400" height="400"></canvas>
+<script>
+window.onload=function() {
+    canv=document.getElementById("gc");
+    ctx=canv.getContext("2d");
+    document.addEventListener("keydown",keyPush);
+    setInterval(game,1000/15);
+}
+px=py=10;
+gs=tc=20;
+ax=ay=15;
+xv=yv=0;
+trail=[];
+tail = 5;
+function game() {
+    px+=xv;
+    py+=yv;
+    if(px<0) {
+        px= tc-1;
+    }
+    if(px>tc-1) {
+        px= 0;
+    }
+    if(py<0) {
+        py= tc-1;
+    }
+    if(py>tc-1) {
+        py= 0;
+    }
+    ctx.fillStyle="black";
+    ctx.fillRect(0,0,canv.width,canv.height);
+ 
+    ctx.fillStyle="lime";
+    for(var i=0;i<trail.length;i++) {
+        ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
+        if(trail[i].x==px && trail[i].y==py) {
+            tail = 5;
+        }
+    }
+    trail.push({x:px,y:py});
+    while(trail.length>tail) {
+    trail.shift();
+    }
+ 
+    if(ax==px && ay==py) {
+        tail++;
+        ax=Math.floor(Math.random()*tc);
+        ay=Math.floor(Math.random()*tc);
+    }
+    ctx.fillStyle="red";
+    ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
+}
+function keyPush(evt) {
+    switch(evt.keyCode) {
+        case 37:
+            xv=-1;yv=0;
+            break;
+        case 38:
+            xv=0;yv=-1;
+            break;
+        case 39:
+            xv=1;yv=0;
+            break;
+        case 40:
+            xv=0;yv=1;
+            break;
+    }
+}
+</script></center>
+
+
+                              </ul>	
+
+                        </div>
+                  </nav>
+            </header>
+		
+
+		
+			
+			<canvas id="c"></canvas>
+
+
+	  
+    <!-- Scripts -->
+      <script type="text/javascript">
+
+      // Menu-toggle button
+
+      $(document).ready(function() {
+            $(".menu-icon").on("click", function() {
+                  $("nav ul").toggleClass("showing");
+            });
+      });
+
+      // Scrolling Effect
+
+      $(window).on("scroll", function() {
+            if($(window).scrollTop()) {
+                  $('nav').addClass('black');
+            }
+
+            else {
+                  $('nav').removeClass('black');
+            }
+      })
+
+
+      </script>
+	  
+	   <iframe src="enigma3.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+</iframe> 
+ 
+ <audio autoplay loop  id="playAudio">
+      <source src="enigma3.mp3">
+    </audio>
+	
+	  
+	  
+    <!-- title -->
+    <script src="title.js"></script>
+    <!-- title -->
+    <script src="C.js"></script>
+    <!-- title -->
+    <script src="m.js"></script>
+    <!-- music -->
+    <script src="music.js"></script>
+
+</body>
+</html>
